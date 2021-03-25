@@ -40,7 +40,7 @@ def havepassword(): #When you have a password this function will run
         print(' ')
         print('File Unlocked: ' + content2)
         print(' ')
-        input('Press any Key to Exit: ')
+        input('Press Enter Key to Exit: ')
 
     elif login == 'changepass':
       oldpass = input('To Change Your Password Please Enter Your Old One: ')
@@ -57,7 +57,15 @@ def havepassword(): #When you have a password this function will run
         os.system('cls||clear')
         print('Failed To Remove Password [Incorect Password]')
 
-        input('Press any Key to Exit: ')
+        input('Press Enter Key to Exit: ')
+    elif login == 'deletepass':
+      delpass = input('Are you sure? [Y/N]: ')
+      if delpass == 'Y':
+        os.remove('savedpassword.txt')
+        os.system('clr||clear')
+        print('Password Successfuly Deleted!')
+      elif delpass == 'N':
+        print('Password not Deleted!')
     else:
         os.system('cls||clear')
         print('Invalid Password--')
